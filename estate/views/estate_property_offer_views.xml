@@ -1,0 +1,39 @@
+<odoo> 
+
+   <record id="estate_property_offer_view_list" model="ir.ui.view">
+        <field name="name">estate.property.offer.list</field>
+        <field name="model">estate.property.offer</field>
+        <field name="arch" type="xml">
+            <list editable = "bottom"
+                decoration-success="status == 'accepted'"
+                decoration-danger="status == 'refused'"
+            >
+                <field name="price"/>
+                <field name="partner_id"/>
+                <button name="accept_offer" string="Accept" type="object" icon="fa-check"/>
+                <button name="refuse_offer" string="Refuse" type="object" icon="fa-times"/>
+                <field name="status"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="estate_property_offer_view_form" model="ir.ui.view">
+        <field name="name">estate.property.offer.form</field>
+        <field name="model">estate.property.offer</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <header>
+                        <h1>
+                            <field name="partner_id"/>
+                        </h1>                    
+                    </header>
+                    <group>    
+                        <field name="price"/>       
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
